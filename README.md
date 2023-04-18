@@ -1,3 +1,3 @@
 # projekts
-Different projekts in
+Different my projekts in
 Python 3     ✔
