@@ -1,0 +1,127 @@
+#Закон на ОМ Python
+import math
+result = 0
+first_result = input("You search U or I or R or P: ")
+if first_result == "U".lower():                                     # for U
+    result1 = input("Wall first I or R or P")
+    if result1 == "I".lower():
+        result1 = float(input("insert digit for I: "))
+        result2 = input("Wall second R or P: ")
+        if result2 == "R".lower():
+            result2 = float(input("insert digit for R: "))
+            result = result1 * result2
+        elif result2 == "P".lower():
+            result2 = float(input("insert digit for P: "))
+            result = result2 / result1
+    elif result1 == "R".lower():
+        result1 = float(input("insert digit for R: "))
+        result2 = input("Wall I or P: ")
+        if result2 == "I".lower():
+            result2 = float(input("insert digit for I: "))
+            result = result2 * result1
+        elif result2 == "P".lower():
+            result2 = float(input("insert digit for P: "))
+            result = (math.sqrt(result2 * result1))
+    elif result1 == "P".lower():
+        result1 = float(input("insert digit for P: "))
+        result2 = input("Wall I or R: ")
+        if result2 == "I".lower():
+            result2 = float(input("insert digit for I: "))
+            result = result1 / result2
+        elif result2 == "R".lower():
+            result2 = float(input("insert digit for R: "))
+            result = (math.sqrt(result1 * result2))
+    print("%.2f" % result, "V")
+if first_result == "I".lower():                                    # for I
+    result1 = input("Wall first U or R or P")
+    if result1 == "U".lower():
+        result1 = float(input("insert digit for U: "))
+        result2 = input("Wall second R or P: ")
+        if result2 == "R".lower():
+            result2 = float(input("insert digit for R: "))
+            result = result1 / result2
+        elif result2 == "P".lower():
+            result2 = float(input("insert digit for P: "))
+            result = result2 / result1
+    elif result1 == "R".lower():
+        result1 = float(input("insert digit for R: "))
+        result2 = input("Wall first U or P")
+        if result2 == "U".lower():
+            result2 = float(input("insert digit for U: "))
+            result = result2 / result1
+        elif result2 == "P".lower():
+            result2 = float(input("insert digit for P: "))
+            result = (math.sqrt(result2 * result1))
+    elif result1 == "P".lower():
+        result1 = float(input("insert digit for P: "))
+        result2 = input("Wall first U or R")
+        if result2 == "U".lower():
+            result2 = float(input("insert digit for U: "))
+            result = result1 / result2
+        if result2 == "R".lower():
+            result2 = float(input("insert digit for R: "))
+            result = (math.sqrt(result1 / result2))
+    print("%.2f" % result, "A")
+if first_result == "R".lower():                                     # for R
+    result1 = input("Wall first U or P or I: ")
+    if result1 == "U".lower():
+        result1 = float(input("insert digit for U: "))
+        result2 = input("Wall second P or I: ")
+        if result2 == "P".lower():
+            result2 = float(input("insert digit for P: "))
+            result = result1 * result1 / result2
+        elif result2 == "I".lower():
+            result2 = float(input("insert digit for I: "))
+            result = result1 / result2
+    elif result1 == "P".lower():
+        result1 = float(input("insert digit for P: "))
+        result2 = input("Wall second U or I: ")
+        if result2 == "U".lower():
+            result2 = float(input("insert digit for U: "))
+            result = (result2 * result2) / result1
+        elif result2 == "I".lower():
+            result2 = float(input("insert digit for I: "))
+            result = result1 / (result2 * result2)
+    elif result1 == "I".lower():
+        result1 = float(input("insert digit for I: "))
+        result2 = input("Wall second U or P: ")
+        if result2 == "U".lower():
+            result2 = float(input("insert digit for U: "))
+            result = result2 / result1
+        elif result2 == "P".lower():
+            result2 = float(input("insert digit for P: "))
+            result = result2 / (result1 * result1)
+    print("%.2f" % result, "OM")
+if first_result == "P".lower():                                     # for P
+    result1 = input("Wall first R or U or I: ")
+    if result1 == "R".lower():
+        result1 = float(input("insert digit for R: "))
+        result2 = input("Wall second U or I: ")
+        if result2 == "U".lower():
+            result2 = float(input("insert digit for U: "))
+            result = (result2 * result2) / result1
+        elif result2 == "I".lower():
+            result2 = float(input("insert digit for I: "))
+            result = (result2 * result2) * result1
+    elif result1 == "U".lower():
+        result1 = float(input("insert digit for U: "))
+        result2 = input("Wall second R or I: ")
+        if result2 == "R".lower():
+            result2 = float(input("insert digit for R: "))
+            result = (result1 * result1) / result2
+        elif result2 == "I".lower():
+            result2 = float(input("insert digit for I: "))
+            result = result1 * result2
+    elif result1 == "I".lower():
+        result1 = float(input("insert digit for I: "))
+        result2 = input("Wall second R or U: ")
+        if result2 == "R".lower():
+            result2 = float(input("insert digit for R: "))
+            result = (result1 * result1) * result2
+        elif result2 == "U".lower():
+            result2 = float(input("insert digit for U: "))
+            result = result1 * result2
+    print("%.2f" % result, "W")
+if first_result != "U".lower() and first_result != "I".lower() and first_result != "R".lower() \
+        and first_result != "P".lower():
+    print("ERROR")
