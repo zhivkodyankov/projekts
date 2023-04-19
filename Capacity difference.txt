@@ -1,0 +1,16 @@
+
+#Opredeliane na stoinost na kondensator za beztransformatorno zachranvane
+U_Lamp = float(input("vavedi U na lampata: "))
+I_Lamp = float(input("vavedi I prez lampata: "))
+Ucc = int(input("vavedi Ucc: "))
+R = Ucc / I_Lamp
+R_Lamp = U_Lamp / I_Lamp
+Rt = R - R_Lamp
+Cf = 1000000 / (314 * Rt)
+Cf = round(Cf, 2)
+if Cf >= 1:
+    print(Cf, "MF")
+elif 0.001 < Cf < 1:
+    print(Cf * 1000, "nF")
+else:
+    print("error")
